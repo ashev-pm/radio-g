@@ -1,19 +1,7 @@
 <template>
   <v-app>
     <Header/>
-    <v-parallax
-      dark
-      height="700"
-      src="https://images.wallpaperscraft.com/image/earth_moon_space_galaxy_118437_1920x1080.jpg"
-    >
-      <v-content>
-        <HelloWorld/>
-      </v-content>
-    </v-parallax>
-    <v-spacer></v-spacer>
-    <v-layout>
-    <info></info>
-    </v-layout>
+    
     <v-parallax
       dark
       height="700"
@@ -32,15 +20,13 @@
 import HelloWorld from "./components/HelloWorld";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import Info from "./components/Info.vue";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
     Header,
-    Footer,
-    Info
+    Footer
   }
 };
 </script>
