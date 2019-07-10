@@ -3,7 +3,7 @@
     <v-layout text-xs-center wrap>
       <v-flex xs12>
         <v-img 
-        :src="require('../assets/ragio-g.png')" 
+        :src="require('../assets/ragio-g-small.png')" 
         class="my-5" 
         contain height="420">
         </v-img>
