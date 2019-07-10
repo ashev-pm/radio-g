@@ -23,16 +23,19 @@
         <v-icon v-else>get_app</v-icon>
       </v-btn>
       <v-slider @click.native="setPosition()" v-model="percentage" dark :disabled="!loaded"></v-slider>
-      <p>{{ currentTime }} / {{ duration }}</p>
+      <p>{{ currentTime }} <!-- / {{ duration }} --></p>
     </v-card-text>
     <audio id="player" ref="player" v-on:ended="ended" v-on:canplay="canPlay" :src="file"></audio>
   </v-card>
 </template>
 <script>
+import { debuglog } from 'util';
+
 const formatTime = second =>
   new Date(second * 1000).toISOString().substr(11, 8);
+
 export default {
-  name: "vuetify-audio",
+
   props: {
     file: {
       type: String,
@@ -48,9 +51,10 @@ export default {
     },
     canPlay: {
       type: Function,
-      default: () => {}
+      default: () => {true}
     }
   },
+
   computed: {
     duration: function() {
       return this.audio ? formatTime(this.totalDuration) : "";
@@ -60,7 +64,7 @@ export default {
     return {
       firstPlay: true,
       isMuted: false,
-      loaded: false,
+      loaded: true,
       playing: false,
       paused: false,
       percentage: 0,
@@ -78,12 +82,12 @@ export default {
     stop() {
       this.paused = this.playing = false;
       this.audio.pause();
-      this.audio.currentTime = 0;
+      //this.audio.currentTime = 0; //ToDO fix reuired for calculation of playing time
     },
     play() {
       if (this.playing) return;
       this.paused = false;
-      this.audio.play().then(_ => (this.playing = true));
+      this.audio.play().then(() => (this.playing = true));
     },
     pause() {
       this.paused = !this.paused;
@@ -107,7 +111,7 @@ export default {
           // Fix duration for streamed audio source or blob based
           // https://stackoverflow.com/questions/38443084/how-can-i-add-predefined-length-to-audio-recorded-from-mediarecorder-in-chrome/39971175#39971175
           this.audio.currentTime = 1e101;
-          this.audio.ontimeupdate = () => {
+          this.audio.ontimeupdate = _ => {
             this.audio.ontimeupdate = () => {};
             this.audio.currentTime = 0;
             this.totalDuration = parseInt(this.audio.duration);
@@ -122,7 +126,7 @@ export default {
         throw new Error("Failed to load sound file");
       }
     },
-    _handlePlayingUI: function(e) {
+    _handlePlayingUI: function() {
       this.percentage = (this.audio.currentTime / this.audio.duration) * 100;
       this.currentTime = formatTime(this.audio.currentTime);
     },
@@ -165,3 +169,4 @@ export default {
     this.audio.removeEventListener("ended", this._handleEnded);
   }
 };
+</script>
