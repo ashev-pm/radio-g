@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <Header/>
-    
     <v-parallax
+      class="par"    
       dark
-      height="700"
+      height="900"
       src="https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg"
     >
       <v-content>
@@ -26,7 +26,7 @@ export default {
   components: {
     HelloWorld,
     Header,
-    Footer
+    Footer,
   }
 };
 </script>
@@ -39,5 +39,16 @@ export default {
   width: 100%;
   text-align: center;
 }
+
+.par {
+  height: auto
+}
+
+@media screen and (max-width: 540px) {
+ .v-card__title {
+    padding: 0px 0px 25px 0px;
+}
+}
+
 </style>
 
