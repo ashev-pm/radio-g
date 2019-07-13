@@ -1,22 +1,23 @@
 <template>
-  <v-card style="text-align: center">
-    <v-card-text>
+  <v-layout row justify-space-between>
+    
       <v-btn
         outline
         icon
-        class="teal--text"
+        class="white--text"
         @click.native="play"
       >
         <v-icon v-if="!isPlayed">play_arrow</v-icon>
         <v-icon v-else>pause</v-icon>
       </v-btn>
-      <v-btn outline icon class="teal--text" @click.native="mute()">
+      
+      <v-btn outline icon class="white--text" @click.native="mute()">
         <v-icon v-if="!isMuted">volume_up</v-icon>
         <v-icon v-else>volume_off</v-icon>
       </v-btn>
-    </v-card-text>
+  
     <audio id="player" ref="player" :src="file"></audio>
-  </v-card>
+  </v-layout>
 </template>
 <script>
 

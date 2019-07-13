@@ -44,11 +44,7 @@ export default {
   height: auto
 }
 
-@media screen and (max-width: 540px) {
- .v-card__title {
-    padding: 0px 0px 25px 0px;
-}
-}
+
 
 </style>
 

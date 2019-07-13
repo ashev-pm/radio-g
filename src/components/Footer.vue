@@ -3,7 +3,7 @@
     <v-card class="flex" flat tile>
       <v-card-title class="indigo" color="#774AAD">
         <v-layout justify-center>
-          <Player/>
+          <Player class="play"> </Player>
         </v-layout>
       </v-card-title>
 
@@ -36,3 +36,4 @@ export default {
   }
 };
 </script>
+
