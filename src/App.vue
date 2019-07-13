@@ -26,7 +26,7 @@ export default {
   components: {
     HelloWorld,
     Header,
-    Footer
+    Footer,
   }
 };
 </script>
