@@ -23,7 +23,7 @@ import TWEEN from "@tweenjs/tween.js"
 const settings = {
   minRotate: 0,
   maxRotate: 360,
-  speed: 4500
+  speed: 8400
 }
 
 export default {
