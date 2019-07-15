@@ -1,15 +1,15 @@
 <template>
   <v-footer dark height="auto">
-    <v-card class="flex" flat tile>
-      <v-card-title class="indigo" color="#774AAD">
+    <v-card class="flex" flat tile >
+      <v-card-title class="indigo pa-1" color="#774AAD"> 
         <v-layout justify-center>
           <Player class="play"> </Player>
         </v-layout>
       </v-card-title>
 
-      <v-card-actions class="grey darken-3 justify-center">
-        &copy;2019 —
-        <strong>Radio.G (c) Все наладится... И точка.</strong>
+      <v-card-actions class="grey darken-3 justify-center yellow--text" >
+        
+        <strong >&copy;2019 — Radio.G (c) Наверное лучшее радио... И точка.</strong>
       </v-card-actions>
     </v-card>
   </v-footer>
@@ -36,4 +36,6 @@ export default {
   }
 };
 </script>
+
+
 
