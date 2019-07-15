@@ -4,14 +4,14 @@
       <v-btn
         outline
         icon
-        class="yellow--text"
+        class="green--text text--lighten-3"
         @click.native="play"
       >
         <v-icon v-if="!isPlayed">play_arrow</v-icon>
         <v-icon v-else>pause</v-icon>
       </v-btn>
       
-      <v-btn outline icon class="yellow--text" @click.native="mute()">
+      <v-btn outline icon class="green--text text--lighten-3" @click.native="mute()">
         <v-icon v-if="!isMuted">volume_up</v-icon>
         <v-icon v-else>volume_off</v-icon>
       </v-btn>
