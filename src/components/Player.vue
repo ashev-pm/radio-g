@@ -10,6 +10,8 @@
         <v-icon v-if="!isPlayed">play_arrow</v-icon>
         <v-icon v-else>pause</v-icon>
       </v-btn>
+
+      <h1>{{trackName}}</h1>
       
       <v-btn outline icon class="green--text text--lighten-3" @click.native="mute()">
         <v-icon v-if="!isMuted">volume_up</v-icon>
@@ -24,7 +26,10 @@
 import {
   mapState,
   mapMutations
-} from "vuex"
+} from "vuex";
+import io from 'socket.io-client';
+const server = 'http://35.224.48.39:3000';
+const socket = io(server);
 
 export default {
   computed: {
@@ -36,7 +41,8 @@ export default {
   data() {
     return {
       isMuted: false,
-      audio: undefined
+      audio: undefined,
+      trackName: ""
     };
   },
   watch: {
@@ -59,9 +65,13 @@ export default {
       this.audio.muted = this.isMuted;
       this.volumeValue = this.isMuted ? 0 : 75;
     },
+    updateTrackName(name) {
+      this.trackName = name;
+    }
   },
   mounted() {
     this.audio = this.$refs.player;
+    socket.on('trackName', this.updateTrackName);
   },
 };
 </script>
