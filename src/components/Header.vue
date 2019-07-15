@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <v-toolbar color="#4a148c" height="84px" fixed>
+    <v-toolbar class="purple darken-4" height="84px" fixed>
       <v-layout justify-center>
         <v-img
           class="tool"

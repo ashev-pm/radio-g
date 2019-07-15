@@ -1,13 +1,13 @@
 <template>
   <v-footer dark height="auto">
     <v-card class="flex" flat tile >
-      <v-card-title class="indigo darken-1 pa-1" color="#774AAD"> 
+      <v-card-title class="purple darken-4 pa-1" color="#774AAD"> 
         <v-layout justify-center>
           <Player class="play"> </Player>
         </v-layout>
       </v-card-title>
 
-      <v-card-actions class="grey darken-3 justify-center lime--text" >
+      <v-card-actions class="grey darken-3 justify-center green--text text--lighten-3" >
         
         <strong >&copy;2019 — Radio.G (c) Наверное лучшее радио... И точка.</strong>
       </v-card-actions>
