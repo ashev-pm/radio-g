@@ -11,7 +11,9 @@
         <v-icon v-else>pause</v-icon>
       </v-btn>
 
-      <h1>{{trackName}}</h1>
+      <v-card flat color="purple darken-4">
+        <v-card-text class="green--text text--lighten-3">{{trackName}}</v-card-text>
+      </v-card>
       
       <v-btn outline icon class="green--text text--lighten-3" @click.native="mute()">
         <v-icon v-if="!isMuted">volume_up</v-icon>
