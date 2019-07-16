@@ -11,8 +11,8 @@
         <v-icon v-else>pause</v-icon>
       </v-btn>
 
-      <v-card flat color="purple darken-4">
-        <v-card-text class="green--text text--lighten-3">{{trackName}}</v-card-text>
+      <v-card flat color="purple darken-4" >
+        <v-card-text class="green--text text--lighten-3">{{trackArtist}} - {{trackTitle}}</v-card-text>
       </v-card>
       
       <v-btn outline icon class="green--text text--lighten-3" @click.native="mute()">
@@ -44,7 +44,8 @@ export default {
     return {
       isMuted: false,
       audio: undefined,
-      trackName: ""
+      trackTitle: "",
+      trackArtist: ""
     };
   },
   watch: {
@@ -67,10 +68,12 @@ export default {
       this.audio.muted = this.isMuted;
       this.volumeValue = this.isMuted ? 0 : 75;
     },
-    updateTrackName(name) {
-      this.trackName = name;
-    }
+    updateTrackName({title,artist}) {
+      this.trackTitle = title;
+      this.trackArtist = artist;
+    },
   },
+  //TODO: move 'trackName' to separate constant
   mounted() {
     this.audio = this.$refs.player;
     socket.on('trackName', this.updateTrackName);
