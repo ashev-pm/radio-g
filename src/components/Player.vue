@@ -12,7 +12,7 @@
       </v-btn>
       </div>
       <v-card flat color="purple darken-4" >
-        <v-card-text class="green--text text--lighten-3">{{trackArtist}} - {{trackTitle}}</v-card-text>
+        <v-card-text class="green--text text--lighten-3"><strong>{{trackArtist}} - {{trackTitle}} </strong></v-card-text>
       </v-card>
       <div class="butt">
       <v-btn outline icon class="green--text text--lighten-3" @click.native="mute()">
