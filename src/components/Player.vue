@@ -12,7 +12,11 @@
       </v-btn>
       </div>
       <v-card flat color="purple darken-4" >
-        <v-card-text class="green--text text--lighten-3"><strong>{{trackArtist}} - {{trackTitle}} </strong></v-card-text>
+        <v-card-text class="green--text text--lighten-3" >
+          <marquee> 
+            <h3>{{trackArtist}} - {{trackTitle}} </h3> 
+          </marquee> 
+        </v-card-text>
       </v-card>
       <div class="butt">
       <v-btn outline icon class="green--text text--lighten-3" @click.native="mute()">
@@ -82,12 +86,9 @@ export default {
 </script>
 
 <style>
-
-@media only screen and (max-width: 600px) {
- .butt {
-  margin-top: 11px;
+.butt {
+  margin-left: 7px;
+  margin-right: 7px;
 }
-}
-
 
 </style>
