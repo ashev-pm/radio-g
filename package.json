@@ -10,6 +10,7 @@
   "dependencies": {
     "@tweenjs/tween.js": "^17.4.0",
     "core-js": "^2.6.5",
+    "socket.io-client": "^2.2.0",
     "vue": "^2.6.10",
     "vue-audio": "0.0.12",
     "vuetify": "^1.5.5",
