@@ -1,6 +1,6 @@
 <template>
   <v-layout row justify-space-between>
-    
+          <div class="butt">
       <v-btn
         outline
         icon
@@ -10,16 +10,16 @@
         <v-icon v-if="!isPlayed">play_arrow</v-icon>
         <v-icon v-else>pause</v-icon>
       </v-btn>
-
+      </div>
       <v-card flat color="purple darken-4" >
-        <v-card-text class="green--text text--lighten-3">{{trackArtist}} - {{trackTitle}}</v-card-text>
+        <v-card-text class="green--text text--lighten-3"><strong>{{trackArtist}} - {{trackTitle}} </strong></v-card-text>
       </v-card>
-      
+      <div class="butt">
       <v-btn outline icon class="green--text text--lighten-3" @click.native="mute()">
         <v-icon v-if="!isMuted">volume_up</v-icon>
         <v-icon v-else>volume_off</v-icon>
       </v-btn>
-  
+  </div>
     <audio id="player" ref="player" :src="file"></audio>
   </v-layout>
 </template>
@@ -80,3 +80,14 @@ export default {
   },
 };
 </script>
+
+<style>
+
+@media only screen and (max-width: 600px) {
+ .butt {
+  margin-top: 11px;
+}
+}
+
+
+</style>
