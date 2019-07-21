@@ -9,7 +9,7 @@
 
       <v-card-actions class="grey darken-3 justify-center green--text text--lighten-3" >
         
-        <strong >&copy;2019 — Radio.G (c) Наверное лучшее радио... И точка.</strong>
+      &copy;2019 — Radio.G (c) Наверное лучшее радио... И точка.
       </v-card-actions>
     </v-card>
   </v-footer>
