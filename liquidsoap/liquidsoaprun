@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for radio in "/usr/share/liquidsoap/*.liq"
+do
+  liquidsoap $radio
+done
