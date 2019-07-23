@@ -15,9 +15,6 @@ export default new Vuex.Store({
       } else {
         state.isPlayed = true;
       }
-    },
-    setPlayerActivity(state, isPlayed) {
-      state.isPlayed = isPlayed;
     }
   },
   actions: {

@@ -7,15 +7,16 @@
           class="tool"
           src="https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/logo-white.png"
           max-width="333"
-          
         ></v-img>
       </v-layout>
     </v-toolbar>
   </div>
 </template>
 
-    <style>
+<style>
+
 .tool {
   align-content: center;
 }
+
 </style>
