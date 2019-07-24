@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
 import Player from "./Player.vue";
 
 export default {
@@ -31,10 +32,10 @@ export default {
         "fab fa-linkedin",
         "fab fa-instagram"
       ]
-      //
     };
   }
 };
+
 </script>
 
 

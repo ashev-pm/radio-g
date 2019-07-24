@@ -17,6 +17,7 @@
 </template>
 
 <script>
+
 import HelloWorld from "./components/HelloWorld";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
@@ -29,9 +30,11 @@ export default {
     Footer,
   }
 };
+
 </script>
 
 <style>
+
 .footer {
   position: fixed;
   left: 0;
@@ -43,8 +46,6 @@ export default {
 .par {
   height: auto
 }
-
-
 
 </style>
 

@@ -8,9 +8,8 @@
   </v-container>
 </template>
 
-
-
 <script>
+
 export default {
   data() {
     return {
@@ -35,9 +34,11 @@ export default {
     };
   }
 };
+
 </script>
 
 <style scoped>
+
 .slider {
   max-width: 100%;
   margin-top: -210px;
@@ -45,5 +46,6 @@ export default {
   position: relative;
   z-index: 1000;
 }
+
 </style>
 

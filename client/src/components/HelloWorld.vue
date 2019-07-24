@@ -20,17 +20,12 @@ import {
 } from "vuex"
 import TWEEN from "@tweenjs/tween.js"
 
-const settings = {
-  minRotate: 0,
-  maxRotate: 360,
-  speed: 8400
-}
-
 export default {
   data() {
     return {
-      currentRotate: settings.minRotate,
-      currentTween: null
+      currentRotate: 0,
+      currentTween: null,
+      settings: {}
     }
   },
   computed: {
@@ -39,22 +34,25 @@ export default {
     }),
     rotate() {
       return `transform: rotate(${this.currentRotate}deg);`
+    },
+    currentSpeed() {
+      return (this.settings.speed / this.settings.maxRotate) * (this.settings.maxRotate - this.currentRotate);
     }
   },
   watch: {
-    currentRotate: function (newValue) {
-      if (newValue >= settings.maxRotate) {
-        this.currentRotate = settings.minRotate; 
+    currentRotate: function (newRotation) {
+      if (newRotation >= this.settings.maxRotate) {
+        this.currentRotate = this.settings.minRotate;
         this.tween();
       }
     },
     //TODO: neew to think how can avoid watch
-    isPlayed: function (newValue) {       
-        if (!newValue) {
-          TWEEN.removeAll()          
-        } else {
-          this.tween();
-        }      
+    isPlayed: function (playing) {
+      if (playing) {
+        this.tween();
+      } else {
+        TWEEN.removeAll();
+      }
     }
   },
   methods: {
@@ -62,9 +60,7 @@ export default {
       'play'
     ]),
     tween: function () {
-      let vm = this
-      let currentSpeed = (settings.speed / settings.maxRotate) * (settings.maxRotate - vm.currentRotate);
-      console.log(currentSpeed);
+      let vm = this;
 
       function animate() {
         if (TWEEN.update()) {
@@ -72,18 +68,24 @@ export default {
         }
       }
 
-      vm.currentTween = new TWEEN.Tween({
+      this.currentTween = new TWEEN.Tween({
           tweeningValue: vm.currentRotate
         })
         .to({
-          tweeningValue: settings.maxRotate
-        },currentSpeed )
+          tweeningValue: this.settings.maxRotate
+        }, vm.currentSpeed)
         .onUpdate(function () {
           vm.currentRotate = this._object.tweeningValue.toFixed(0);
         })
-        .start()
-      animate()
+        .start();
+
+      animate();
     }
+  },
+  mounted() {
+    this.settings = this.appConfig.circularSettings;
+    this.currentRotate = this.appConfig.circularSettings.minRotate;
   }
 }
+
 </script>
