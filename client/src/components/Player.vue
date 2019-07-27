@@ -7,7 +7,7 @@
       </v-btn>
     </div>
     <v-card flat color="purple darken-4">
-      <v-card-text class="green--text text--lighten-3"><strong>{{trackArtist}} - {{trackTitle}} </strong></v-card-text>
+      <v-card-text class="green--text text--lighten-3"><strong> {{track}} </strong></v-card-text>
     </v-card>
     <div class="butt">
       <v-btn outline icon class="green--text text--lighten-3" @click.native="mute()">
@@ -32,14 +32,17 @@ export default {
     ...mapState({
       isPlayed: state => state.isPlayed,
       file: state => state.file
-    })
+    }),
+    track() {
+      return this.trackArtist ? `${this.trackArtist} - ${this.trackTitle}` : this.trackTitle;
+    }
   },
   data() {
     return {
       isMuted: false,
       audio: undefined,
       trackTitle: "",
-      trackArtist: ""
+      trackArtist: null
     };
   },
   watch: {
