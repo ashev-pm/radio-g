@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {config} from '../config'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    file: "http://35.224.48.39:8000/basic-radio.ogg",
+    file: config.streamUrl,
     isPlayed: false
   },
   mutations: {

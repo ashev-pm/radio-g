@@ -1,5 +1,6 @@
 const config = {
     streamProxyUrl: process.env.VUE_APP_STREAM_PROXY_URL,
+    streamUrl: process.env.VUE_APP_STREAM_URL,
     circularSettings: {
         minRotate: 0,
         maxRotate: 360,
