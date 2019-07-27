@@ -59,7 +59,7 @@ function getJsonResult(res) {
   res.on('end', () => {
     try {
       const stats = JSON.parse(rawData);
-      const data = stats.icestats.source.filter(x=>x.server_name === 'basic-radio.ogg')[0];
+      const data = stats.icestats.source.filter(x=>x.server_name === 'black.mp3')[0];
       if (state.title === data.title 
           && state.artist === data.artist) 
         return;
