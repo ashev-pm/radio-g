@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Utils
 {
@@ -9,11 +12,6 @@ namespace Utils
 
         public static implicit operator Option<T>(None none) =>
             new None<T>();
-
-        public object Reduce(Array array)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class Some<T> : Option<T>
@@ -52,5 +50,7 @@ namespace Utils
 
         public static T Reduce<T>(this Option<T> option, Func<T> whenNone) =>
             option is Some<T> some ? (T)some : whenNone();
+
+        public static IEnumerable<T> Flatten<T>(this IEnumerable<Option<T>> options) => options.OfType<T>();
     }
 }

@@ -1,6 +1,8 @@
 using Xunit;
-using Feed.Domain.Model;
+using Feed.Domain.Component;
 using System;
+using Utils;
+using System.Linq;
 
 namespace Feed.Tests
 {
@@ -23,8 +25,12 @@ namespace Feed.Tests
             var post = Post.WithContent(ContentHolder.Create()
                  .AddMessage(new Message())
                  .AddImage(new Image()))
-                 .AddLike(React.From(new FeedUser()).At(DateTime.UtcNow).IsPostLike());
+                 .AddLike(PostReaction.FromUserAtTime<PostLike>(new FeedUser(), DateTime.UtcNow))
+                 .AddDislike(PostReaction.FromUserAtTime<PostDislike>(new FeedUser(), DateTime.UtcNow))
+                 .AddDislike(PostReaction.FromUserAtTime<PostDislike>(new FeedUser(), DateTime.UtcNow));
 
+            Assert.Single(post.Likes);
+            Assert.Equal(2, post.Dislikes.Count());
         }
     }
 }

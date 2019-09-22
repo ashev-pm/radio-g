@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Feed.Domain.Model
+namespace Feed.Domain.Component
 {
     public abstract class Content { }
 
