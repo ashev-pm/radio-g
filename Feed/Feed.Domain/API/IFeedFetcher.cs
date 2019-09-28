@@ -7,7 +7,11 @@ namespace Feed.Domain.API
 {
     public interface IFeedFetcher<TId>
     {
-        Task<IEnumerable<Post>> FetchPostAsync(FeedFetch<TId> fetch);
-        Task<IEnumerable<Comment>> FetchCommentAsync(FeedFetch<TId> fetch);
+        Task<IEnumerable<Post>> FetchPostNewestAsync(FeedFetch<TId> fetch);
+        Task<IEnumerable<Comment>> FetchCommentNewestAsync(FeedFetch<TId> fetch);
+
+        Task<IEnumerable<Post>> FetchPostPopularAsync(FeedFetch<TId> fetch);
+        Task<IEnumerable<Comment>> FetchCommentPopularAsync(FeedFetch<TId> fetch);
+
     }
 }

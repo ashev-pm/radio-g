@@ -1,7 +1,6 @@
 using Xunit;
 using Feed.Domain.Component;
 using System;
-using Utils;
 using System.Linq;
 
 namespace Feed.Tests

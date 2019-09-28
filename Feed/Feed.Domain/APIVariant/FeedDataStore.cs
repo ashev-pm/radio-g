@@ -6,11 +6,11 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Utils;
+using Utils; 
 
-namespace Feed.Tests
+namespace Feed.Domain.APIVariant
 {
-    internal class FeedDataStore : IFeedDataStore<Guid>
+    public class FeedDataStore : IFeedDataStore<Guid>
     {
         public static ConcurrentDictionary<Guid, Post> Posts { get; } = new ConcurrentDictionary<Guid, Post>();
 
@@ -44,12 +44,7 @@ namespace Feed.Tests
             return await Task.FromResult("Value was not saved");
         }
 
-        public Task<IEnumerable<Comment>> LoadCommentsAsync(FeedFetch<Guid> fetch)
-            => fetch.Category == FeedFetch<Guid>.ECategory.Newest ?
-            LoadNewsetComments(fetch) :
-            LoadPopularComments(fetch);
-
-        private async Task<IEnumerable<Comment>> LoadPopularComments(FeedFetch<Guid> fetch)
+        public async Task<IEnumerable<Comment>> LoadPopularComments(FeedFetch<Guid> fetch)
             => await Task.FromResult(
                 Comments.TryGetValue(fetch.Latest.Id, out var latest) ?
                     Comments.Values
@@ -60,7 +55,7 @@ namespace Feed.Tests
                     Array.Empty<Comment>()
             );
 
-        private async Task<IEnumerable<Comment>> LoadNewsetComments(FeedFetch<Guid> fetch)
+        public async Task<IEnumerable<Comment>> LoadNewestComments(FeedFetch<Guid> fetch)
             => await Task.FromResult(
                     Comments.Values
                     .OrderBy(x => x.CreateAt)
@@ -68,12 +63,7 @@ namespace Feed.Tests
                     .Take(fetch.Step)
                 );
 
-        public Task<IEnumerable<Post>> LoadPostsAsync(FeedFetch<Guid> fetch)
-            => fetch.Category == FeedFetch<Guid>.ECategory.Newest ?
-            LoadNewsetPosts(fetch) :
-            LoadPopularPosts(fetch);
-
-        private async Task<IEnumerable<Post>> LoadPopularPosts(FeedFetch<Guid> fetch)
+        public async Task<IEnumerable<Post>> LoadPopularPosts(FeedFetch<Guid> fetch)
             => await Task.FromResult(
                 Posts.TryGetValue(fetch.Latest.Id, out var latest) ?
                     Posts.Values
@@ -84,7 +74,7 @@ namespace Feed.Tests
                     Array.Empty<Post>()
             );
 
-        private async Task<IEnumerable<Post>> LoadNewsetPosts(FeedFetch<Guid> fetch)
+        public async Task<IEnumerable<Post>> LoadNewestPosts(FeedFetch<Guid> fetch)
             => await Task.FromResult(
                     Posts.Values
                     .OrderBy(x => x.CreateAt)

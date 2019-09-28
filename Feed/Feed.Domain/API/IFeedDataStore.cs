@@ -11,8 +11,11 @@ namespace Feed.Domain.API
         Task<Either<string, TId>> SavePostAsync(Post post);
         Task<Either<string, TId>> SaveCommentAsync(Comment post);
 
-        Task<IEnumerable<Comment>> LoadCommentsAsync(FeedFetch<TId> fetch);
-        Task<IEnumerable<Post>> LoadPostsAsync(FeedFetch<TId> fetch);
+        Task<IEnumerable<Comment>> LoadPopularComments(FeedFetch<TId> fetch);
+        Task<IEnumerable<Comment>> LoadNewestComments(FeedFetch<TId> fetch);
+
+        Task<IEnumerable<Post>> LoadPopularPosts(FeedFetch<TId> fetch);
+        Task<IEnumerable<Post>> LoadNewestPosts(FeedFetch<TId> fetch);
 
         Task<Either<string, Comment>> LoadCommentAsync(TId id);
         Task<Either<string, Post>> LoadPostAsync(TId id);

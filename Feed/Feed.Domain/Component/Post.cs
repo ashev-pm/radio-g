@@ -10,7 +10,6 @@ namespace Feed.Domain.Component
     public class Post : ILoadable<Guid>
     {
         public Guid Id { get; private set; }
-
         public DateTime CreateAt { get; private set; }
         public FeedUser OriginalPoster { get; private set; }
         public ContentHolder Content { get; private set; }
@@ -19,11 +18,7 @@ namespace Feed.Domain.Component
         private Option<IEnumerable<PostLike>> maybeLikes;
 
         public IEnumerable<PostDislike> Dislikes => maybeDislikes.Reduce(Array.Empty<PostDislike>);
-
-        public static Post Empty => new Post();
-
         private Option<IEnumerable<PostDislike>> maybeDislikes;
-
 
         protected Post(ContentHolder content)
         {
@@ -35,6 +30,7 @@ namespace Feed.Domain.Component
         }
 
         public static Post WithContent(ContentHolder content) => new Post(content);
+        public static Post Empty => new Post();
 
         public Post AddDislike(PostDislike postDislike)
         {

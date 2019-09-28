@@ -16,8 +16,12 @@ namespace Feed.Domain.APIVariant
             this.dataStore = dataStore;
         }
 
-        public async Task<IEnumerable<Comment>> FetchCommentAsync(FeedFetch<Guid> fetch) => await dataStore.LoadCommentsAsync(fetch);
+        public async Task<IEnumerable<Comment>> FetchCommentNewestAsync(FeedFetch<Guid> fetch) => await dataStore.LoadNewestComments(fetch);
 
-        public async Task<IEnumerable<Post>> FetchPostAsync(FeedFetch<Guid> fetch) => await dataStore.LoadPostsAsync(fetch);
+        public async Task<IEnumerable<Comment>> FetchCommentPopularAsync(FeedFetch<Guid> fetch) => await dataStore.LoadNewestComments(fetch);
+
+        public async Task<IEnumerable<Post>> FetchPostNewestAsync(FeedFetch<Guid> fetch) => await dataStore.LoadNewestPosts(fetch);
+
+        public async Task<IEnumerable<Post>> FetchPostPopularAsync(FeedFetch<Guid> fetch) => await dataStore.LoadPopularPosts(fetch);
     }
 }

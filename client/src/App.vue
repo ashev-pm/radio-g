@@ -8,7 +8,8 @@
       src="https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg"
     >
       <v-content>
-        <HelloWorld/>
+        <Rotator/>
+        <Feed/>
       </v-content>
     </v-parallax>
     <v-spacer></v-spacer>
@@ -18,16 +19,18 @@
 
 <script>
 
-import HelloWorld from "./components/HelloWorld";
+import Rotator from "./components/Rotator";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import Feed from "./components/Feed";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Rotator,
     Header,
     Footer,
+    Feed
   }
 };
 

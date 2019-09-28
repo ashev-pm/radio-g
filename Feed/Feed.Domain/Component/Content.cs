@@ -6,7 +6,22 @@ namespace Feed.Domain.Component
 {
     public abstract class Content { }
 
-    public class Message : Content { }
+    public class Message : Content
+    {
+        private string text;
+
+        public Message()
+        {
+        }
+
+        private Message(string text)
+        {
+            this.text = text;
+        }
+
+        public static Message WithText(string text) => new Message(text);
+
+    }
 
     public class Image : Content { }
 
