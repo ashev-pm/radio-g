@@ -9,7 +9,7 @@ export default {
     posts: [{
       title: "post",
       content: {
-        text: "text",
+        text: "Some funny text about that cat bellow. Or... how do you wright this word.",
         image:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg",
         animation:""
       },
@@ -21,20 +21,33 @@ export default {
         image: "../../assets/ragio-g-small.png"
       }
     },{
-      title: "post1",
+      title: "post",
       content: {
-        text: "text"
+        text: "There we will have a facinating text. When we will invite a facinating text wrighter.",
+        image:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg",
+        animation:""
       },
       likes: 0,
-      dislikes: 0
+      dislikes: 0,
+      addedAt:"25/10/2019 20:10:03",
+      user: {
+        name:"Jony",
+        image: "../../assets/ragio-g-small.png"
+      }
     },{
-      title: "post2",
+      title: "post",
       content: {
-        text: "text"
+        text: "Am I a joke to you?!.",
+        image:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg",
+        animation:""
       },
       likes: 0,
-      dislikes: 0
-    }]
+      dislikes: 0,
+      addedAt:"25/10/2019 20:10:03",
+      user: {
+        name:"Jony",
+        image: "../../assets/ragio-g-small.png"
+      }}]
   },
   mutations: {},
   actions: {}
