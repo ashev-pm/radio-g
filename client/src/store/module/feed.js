@@ -7,7 +7,7 @@ export default {
   state: {
     feed: url,
     posts: [{
-      title: "post",
+      title: " This magnificent post ",
       content: {
         text: "Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word.",
         image:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg",
@@ -21,11 +21,11 @@ export default {
         image: "../../assets/ragio-g-small.png"
       }
     },{
-      title: "post",
+      title: " Oh yeah! The the post! ",
       content: {
         text: "There we will have a facinating text. When we will invite a facinating text wrighter.There we will have a facinating text. When we will invite a facinating text wrighter. ",
-        image:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg",
-        animation:""
+        image:"",
+        animation:"https://i.ytimg.com/vi/AgtLkTedcj0/maxresdefault.jpg"
       },
       likes: 0,
       dislikes: 0,
@@ -35,7 +35,7 @@ export default {
         image: "../../assets/ragio-g-small.png"
       }
     },{
-      title: "post",
+      title: " Nobody reads this anyway ",
       content: {
         text: "Am I a joke to you?!.",
         image:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg",

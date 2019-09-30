@@ -1,19 +1,19 @@
 <template>
   <div class="content">
-    <v-window class="mx-auto" v-window-item v-window-item--active style="max-height: 500px;">
-    <v-card  v-card--outlined v-sheet light width="667" overflow-x:hidden overflow-y:auto>
-        <v-container class="pa-2" fluid v-for="post in posts" :key="post.title">
+    <v-window class="wind" v-window-item v-window-item--active style="max-height: 424px;">
+    <v-card v-card--outlined v-sheet light>
+        <v-container class="pa-2" fluid v-for="post in posts" :key="post.title" >
           <v-row>
             <v-col>
               <v-card max-width="100%" class="mx-auto" dark>
                 <v-list-item>
                   <v-list-item-avatar color="grey"></v-list-item-avatar>
                   <v-list-item-content>
-                    <v-list-item-title class="headline">{{ post.content.text }}</v-list-item-title>
+                    <v-list-item-title class="headline">{{ post.title}}</v-list-item-title>
                     <v-list-item-subtitle>by {{ post.user != null ? post.user.name : "" }} at {{ post.addedAt }}</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
-
+<v-card-text>{{ post.content.text }}</v-card-text>
                 <v-img class="white--text" height="250px" :src="post.content.image"></v-img>
 
                 <v-card-actions>
@@ -61,5 +61,14 @@ export default {
 <style>
 .content {
 margin-top: 100px;
+
 }
+.wind{
+      overflow-x: hidden;
+      overflow-y: auto;
+      max-height: 333px;
+      width: 50%;
+      margin-right: auto;
+margin-left: auto;
+    }
 </style>
