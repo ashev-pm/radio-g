@@ -9,7 +9,7 @@ export default {
     posts: [{
       title: "post",
       content: {
-        text: "Some funny text about that cat bellow. Or... how do you wright this word.",
+        text: "Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word.",
         image:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg",
         animation:""
       },
@@ -23,7 +23,7 @@ export default {
     },{
       title: "post",
       content: {
-        text: "There we will have a facinating text. When we will invite a facinating text wrighter.",
+        text: "There we will have a facinating text. When we will invite a facinating text wrighter.There we will have a facinating text. When we will invite a facinating text wrighter. ",
         image:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg",
         animation:""
       },

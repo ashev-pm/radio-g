@@ -1,37 +1,38 @@
 <template>
-  <div>
-    <v-container class="pa-2" fluid  v-for="post in posts" :key="post.title">
-      <v-row>
-        <v-col>
-      <v-card max-width="944" class="mx-auto">
-        <v-list-item>
-          <v-list-item-avatar color="grey"></v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title class="headline">{{ post.content.text }}</v-list-item-title>
-             <v-list-item-subtitle>by {{ post.user != null ? post.user.name : "" }} at {{ post.addedAt }}</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+  <div class="content">
+    <v-window v-window-item overflow-y-auto v-window-item--active style="max-height: 800px;">
+    <v-card class="mx-auto" overflow-hidden v-card--outlined v-sheet light width="667" >
+        <v-container class="pa-2" fluid v-for="post in posts" :key="post.title">
+          <v-row>
+            <v-col>
+              <v-card max-width="667" class="mx-auto" dark>
+                <v-list-item>
+                  <v-list-item-avatar color="grey"></v-list-item-avatar>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline">{{ post.content.text }}</v-list-item-title>
+                    <v-list-item-subtitle>by {{ post.user != null ? post.user.name : "" }} at {{ post.addedAt }}</v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
 
-        <v-img class="white--text" height="250px" :src="post.content.image"></v-img>
+                <v-img class="white--text" height="250px" :src="post.content.image"></v-img>
 
-       
+                <v-card-actions>
+                  <v-btn text color="purple darken-4">{{ post.likes }} likes</v-btn>
 
-        <v-card-actions>
-          <v-btn text color="deep-purple accent-4">{{ post.likes }} likes</v-btn>
-          
-          <v-btn text color="deep-purple accent-4">{{ post.dislikes }} dislikes</v-btn>
-          <div class="flex-grow-1"></div>
-          <v-btn icon>
-            <v-icon>mdi-heart</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon>mdi-share-variant</v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-      </v-col>
-      </v-row>  
-    </v-container>
+                  <v-btn text color="purple darken-4">{{ post.dislikes }} dislikes</v-btn>
+                  <div class="flex-grow-1"></div>
+                  <v-btn icon>
+                    <v-icon>mdi-heart</v-icon>
+                  </v-btn>
+                  <v-btn icon>
+                    <v-icon>mdi-share-variant</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+    </v-card>
 
     <!-- <v-card v-for="post in posts" :key="post.title">
       <v-img class="white--text" height="150px" :src="post.content.image"></v-img>
@@ -41,6 +42,7 @@
       <v-card-actions>{{ post.dislikes }} dislikes</v-card-actions>
       <v-card-text>by {{ post.user != null ? post.user.name : "" }} at {{ post.addedAt }}</v-card-text>
     </v-card>-->
+  </v-window>
   </div>
 </template>
 
@@ -57,4 +59,7 @@ export default {
 </script>
 
 <style>
+.content {
+margin-top: 100px;
+}
 </style>

@@ -8,7 +8,7 @@
       src="https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/439031.jpg"
     >
       <v-content>
-        <Rotator/>
+        <!-- <Rotator/> -->
         <Feed/>
       </v-content>
     </v-parallax>
