@@ -1,11 +1,11 @@
 <template>
   <div class="content">
-    <v-window v-window-item overflow-y-auto v-window-item--active style="max-height: 800px;">
-    <v-card class="mx-auto" overflow-hidden v-card--outlined v-sheet light width="667" >
+    <v-window class="mx-auto" v-window-item v-window-item--active style="max-height: 500px;">
+    <v-card  v-card--outlined v-sheet light width="667" overflow-x:hidden overflow-y:auto>
         <v-container class="pa-2" fluid v-for="post in posts" :key="post.title">
           <v-row>
             <v-col>
-              <v-card max-width="667" class="mx-auto" dark>
+              <v-card max-width="100%" class="mx-auto" dark>
                 <v-list-item>
                   <v-list-item-avatar color="grey"></v-list-item-avatar>
                   <v-list-item-content>
