@@ -1,8 +1,8 @@
 <template>
   <div class="content">
     <v-window class="wind" v-window-item v-window-item--active style="max-height: 424px;">
-    <v-card v-card--outlined v-sheet light>
-        <v-container class="pa-2" fluid v-for="post in posts" :key="post.title" >
+      <v-card  v-card--outlined v-sheet light>
+        <v-container class="pa-2" fluid v-for="post in posts" :key="post.title">
           <v-row>
             <v-col>
               <v-card max-width="100%" class="mx-auto" dark>
@@ -13,8 +13,20 @@
                     <v-list-item-subtitle>by {{ post.user != null ? post.user.name : "" }} at {{ post.addedAt }}</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
-<v-card-text>{{ post.content.text }}</v-card-text>
-                <v-img class="white--text" height="250px" :src="post.content.image"></v-img>
+                <v-card-text>{{ post.content.text }}</v-card-text>
+                <v-img
+                  class="grey lighten 2"
+                  height="250px"
+                  :src="post.content.image"
+                  :lazy-src="post.content.lazy"
+                  aspect-ratio="1"
+                >
+                  <template v-slot:placeholder>
+                    <v-row class="fill-height ma-0" align="center" justify="center">
+                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                    </v-row>
+                  </template>
+                </v-img>
 
                 <v-card-actions>
                   <v-btn text color="purple darken-4">{{ post.likes }} likes</v-btn>
@@ -32,17 +44,17 @@
             </v-col>
           </v-row>
         </v-container>
-    </v-card>
+      </v-card>
 
-    <!-- <v-card v-for="post in posts" :key="post.title">
+      <!-- <v-card v-for="post in posts" :key="post.title">
       <v-img class="white--text" height="150px" :src="post.content.image"></v-img>
       <v-card-title>{{ post.title }}</v-card-title>
       <v-card-text>{{ post.content.text }}</v-card-text>
       <v-card-actions>{{ post.likes }} likes</v-card-actions>
       <v-card-actions>{{ post.dislikes }} dislikes</v-card-actions>
       <v-card-text>by {{ post.user != null ? post.user.name : "" }} at {{ post.addedAt }}</v-card-text>
-    </v-card>-->
-  </v-window>
+      </v-card>-->
+    </v-window>
   </div>
 </template>
 
@@ -60,19 +72,18 @@ export default {
 
 <style>
 .content {
-margin-top: 100px;
-
+  margin-top: 100px;
 }
-.wind{
-      overflow-x: hidden;
-      overflow-y: auto;
-      max-height: 333px;
-      width: 50%;
-      margin-right: auto;
-margin-left: auto;
-    }
+.wind {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 333px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-    /* width */
+/* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
