@@ -1,11 +1,11 @@
 <template>
-  <v-container>
+  <v-container class="rotator">
     <v-layout text-xs-center wrap>
-      <v-flex xs12>        
-        <v-img @click="play()" :style="rotate"
+      <v-flex >        
+        <v-img class="irotator" @click="play()" :style="rotate"
         :src="require('../assets/ragio-g-small.png')" 
-        class="my-5" 
-        contain height="420">
+         
+        contain>
         </v-img>
       </v-flex>
     </v-layout>
@@ -89,3 +89,20 @@ export default {
 }
 
 </script>
+
+<style>
+.rotator {
+  max-width: 642px;
+  margin-right: 6px;
+}
+.irotator {
+  height: 141px;
+}
+
+@media only screen and (min-width: 1924px) {
+ .irotator {
+  height: 191px;
+}
+}
+
+</style>

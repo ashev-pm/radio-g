@@ -19,7 +19,7 @@
 
 <script>
 
-import Rotator from "./components/Rotator";
+// import Rotator from "./components/Rotator";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import Feed from "./components/Feed";
@@ -27,7 +27,7 @@ import Feed from "./components/Feed";
 export default {
   name: "App",
   components: {
-    Rotator,
+    // Rotator,
     Header,
     Footer,
     Feed

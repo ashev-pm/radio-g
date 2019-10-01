@@ -1,11 +1,11 @@
 <template>
   <div class="content">
     <v-window class="wind" v-window-item v-window-item--active style="max-height: 424px;">
-      <v-card  v-card--outlined v-sheet light>
+      <v-card v-card--outlined v-sheet light>
         <v-container class="pa-2" fluid v-for="post in posts" :key="post.title">
           <v-row>
             <v-col>
-              <v-card max-width="100%" class="mx-auto" dark>
+              <v-card max-width="100%" dark>
                 <v-list-item>
                   <v-list-item-avatar color="grey"></v-list-item-avatar>
                   <v-list-item-content>
@@ -14,20 +14,21 @@
                   </v-list-item-content>
                 </v-list-item>
                 <v-card-text>{{ post.content.text }}</v-card-text>
-                <v-img
-                  class="grey lighten 2"
-                  height="250px"
-                  :src="post.content.image"
-                  :lazy-src="post.content.lazy"
-                  aspect-ratio="1"
-                >
-                  <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
-
+                <v-row class="fill-height" align="center" justify="center">
+                  <v-img
+                    class="grey lighten 2"
+                    height="250px"
+                    :src="post.content.image"
+                    :lazy-src="post.content.lazy"
+                    aspect-ratio="1"
+                  >
+                    <template v-slot:placeholder>
+                      <v-row>
+                        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                      </v-row>
+                    </template>
+                  </v-img>
+                </v-row>
                 <v-card-actions>
                   <v-btn text color="purple darken-4">{{ post.likes }} likes</v-btn>
 

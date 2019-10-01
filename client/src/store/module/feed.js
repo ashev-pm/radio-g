@@ -10,7 +10,7 @@ export default {
       title: " This magnificent post ",
       content: {
         text: "Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word.",
-        image:"https://wallpapercave.com/wp/E2VHoFk.jpg",
+        image:"https://images.wallpaperscraft.com/image/goose_bird_beak_113286_3840x2400.jpg",
         lazy:"https://github.com/ashev-pm/pre-velikolepie/blob/master/439031s.jpg",
         animation:""
       },
