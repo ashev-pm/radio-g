@@ -14,7 +14,7 @@
                   </v-list-item-content>
                 </v-list-item>
                 <v-card-text>{{ post.content.text }}</v-card-text>
-                <v-row class="fill-height" align="center" justify="center">
+                <v-row align="center" justify="center">
                   <v-img
                     class="grey lighten 2"
                     height="250px"
@@ -23,9 +23,11 @@
                     aspect-ratio="1"
                   >
                     <template v-slot:placeholder>
-                      <v-row>
-                        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                      <v-container class="fill-height">
+                      <v-row class="mx-auto" align="center" justify="center">
+                        <v-progress-circular class="load" indeterminate color="grey lighten-5" ></v-progress-circular>
                       </v-row>
+                      </v-container>
                     </template>
                   </v-img>
                 </v-row>
@@ -99,5 +101,9 @@ export default {
 ::-webkit-scrollbar-thumb {
   background: grey;
   border-radius: 10px;
+}
+
+.load {
+ vertical-align: middle;
 }
 </style>

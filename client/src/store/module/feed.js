@@ -11,7 +11,7 @@ export default {
       content: {
         text: "Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word.",
         image:"https://images.wallpaperscraft.com/image/goose_bird_beak_113286_3840x2400.jpg",
-        lazy:"https://github.com/ashev-pm/pre-velikolepie/blob/master/439031s.jpg",
+        lazy:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/images.jpg",
         animation:""
       },
       likes: 0,
@@ -26,7 +26,7 @@ export default {
       content: {
         text: "There we will have a facinating text. When we will invite a facinating text wrighter.There we will have a facinating text. When we will invite a facinating text wrighter. ",
         image:"https://bad.src/not/valid",
-        lazy:"https://github.com/ashev-pm/pre-velikolepie/blob/master/439031s.jpg",
+        lazy:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.jpg",
         animation:""
       },
       likes: 0,
