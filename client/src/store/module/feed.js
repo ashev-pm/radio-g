@@ -8,6 +8,16 @@ export default {
     feed: url,
     posts: [{
       title: " This magnificent post ",
+      com: {
+        name0: "WhySheesGone",
+        answer: "OH! MY! GOD! This is literally the funiest post that I`ve seen in years! This goose is so gorgreous, like my ex... Hate that she left me... But this goose tho! It's gorfeous!",
+        name1: "",
+        answer1:"",
+        name2: "",
+        answer2:"",
+        name3: "",
+        answer3:""
+      },
       content: {
         text: "Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word.",
         image:"https://images.wallpaperscraft.com/image/goose_bird_beak_113286_3840x2400.jpg",
@@ -19,7 +29,7 @@ export default {
       addedAt:"25/10/2019 20:10:03",
       user: {
         name:"Jony",
-        image: "../../assets/ragio-g-small.png"
+        image: "https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/images.jpg"
       }
     },{
       title: " Oh yeah! The the post! ",
@@ -33,8 +43,8 @@ export default {
       dislikes: 0,
       addedAt:"25/10/2019 20:10:03",
       user: {
-        name:"Jony",
-        image: "../../assets/ragio-g-small.png"
+        name:"CozMoz",
+        image: "https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.jpg"
       }
     },{
       title: " Nobody reads this anyway ",
@@ -48,8 +58,8 @@ export default {
       dislikes: 0,
       addedAt:"25/10/2019 20:10:03",
       user: {
-        name:"Jony",
-        image: "../../assets/ragio-g-small.png"
+        name:"CatMan",
+        image: "https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/ragio-g-small.png"
       }}]
   },
   mutations: {},

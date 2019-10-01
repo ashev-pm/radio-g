@@ -7,7 +7,11 @@
             <v-col>
               <v-card max-width="100%" dark>
                 <v-list-item>
-                  <v-list-item-avatar color="grey"></v-list-item-avatar>
+                  <v-list-item-avatar>
+                    <v-avatar class="ava">
+                      <img :src="post.user.image" :alt="post.user.name" />
+                    </v-avatar>
+                  </v-list-item-avatar>
                   <v-list-item-content>
                     <v-list-item-title class="headline">{{ post.title}}</v-list-item-title>
                     <v-list-item-subtitle>by {{ post.user != null ? post.user.name : "" }} at {{ post.addedAt }}</v-list-item-subtitle>
@@ -24,39 +28,50 @@
                   >
                     <template v-slot:placeholder>
                       <v-container class="fill-height">
-                      <v-row class="mx-auto" align="center" justify="center">
-                        <v-progress-circular class="load" indeterminate color="grey lighten-5" ></v-progress-circular>
-                      </v-row>
+                        <v-row class="mx-auto" align="center" justify="center">
+                          <v-progress-circular class="load" indeterminate color="grey lighten-5"></v-progress-circular>
+                        </v-row>
                       </v-container>
                     </template>
                   </v-img>
                 </v-row>
                 <v-card-actions>
                   <v-btn text color="purple darken-4">{{ post.likes }} likes</v-btn>
-
                   <v-btn text color="purple darken-4">{{ post.dislikes }} dislikes</v-btn>
+                  <v-spacer />
+                  <!-- Comment Section -->
                   <div class="flex-grow-1"></div>
-                  <v-btn icon>
-                    <v-icon>mdi-heart</v-icon>
-                  </v-btn>
-                  <v-btn icon>
-                    <v-icon>mdi-share-variant</v-icon>
+                  <v-btn icon @click="show = !show">
+                    Comments
+                    <v-icon
+                      class="comment"
+                      color="purple"
+                    >{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
                   </v-btn>
                 </v-card-actions>
+
+                <v-expand-transition>
+                  <div v-show="show">
+                    <v-card-avatar>
+                      <v-list-item>
+                        <v-list-item-avatar>
+                          <v-avatar class="ava">
+                            <img :src="post.user.image" :alt="post.user.name" />
+                          </v-avatar>
+                        </v-list-item-avatar>
+                        <v-list-item-content>
+                          <v-list-item-title class="comment-name" >WhySoGoose</v-list-item-title>
+                        </v-list-item-content>
+                      </v-list-item>
+                    </v-card-avatar>
+                    <v-card-text>I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.</v-card-text>
+                  </div>
+                </v-expand-transition>
               </v-card>
             </v-col>
           </v-row>
         </v-container>
       </v-card>
-
-      <!-- <v-card v-for="post in posts" :key="post.title">
-      <v-img class="white--text" height="150px" :src="post.content.image"></v-img>
-      <v-card-title>{{ post.title }}</v-card-title>
-      <v-card-text>{{ post.content.text }}</v-card-text>
-      <v-card-actions>{{ post.likes }} likes</v-card-actions>
-      <v-card-actions>{{ post.dislikes }} dislikes</v-card-actions>
-      <v-card-text>by {{ post.user != null ? post.user.name : "" }} at {{ post.addedAt }}</v-card-text>
-      </v-card>-->
     </v-window>
   </div>
 </template>
@@ -69,6 +84,11 @@ export default {
     ...mapState({
       posts: state => state.feed.posts
     })
+  },
+  data: () => {
+    return {
+      show: false
+    };
   }
 };
 </script>
@@ -84,6 +104,19 @@ export default {
   width: 50%;
   margin-right: auto;
   margin-left: auto;
+}
+
+.comment {
+  margin-right: 45px;
+}
+
+.comment-name {
+  margin-left: 9px;
+}
+
+.ava {
+  left: 3px;
+  top: 3px;
 }
 
 /* width */
@@ -104,6 +137,6 @@ export default {
 }
 
 .load {
- vertical-align: middle;
+  vertical-align: middle;
 }
 </style>
