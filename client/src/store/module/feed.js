@@ -8,7 +8,11 @@ export default {
     feed: url,
     posts: [{
       title: " This magnificent post ",
-      com: {
+      content: {
+        text: "Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word.",
+        image:"https://images.wallpaperscraft.com/image/goose_bird_beak_113286_3840x2400.jpg",
+        lazy:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/images.jpg",
+        animation:"",
         name0: "WhySheesGone",
         answer: "OH! MY! GOD! This is literally the funiest post that I`ve seen in years! This goose is so gorgreous, like my ex... Hate that she left me... But this goose tho! It's gorfeous!",
         name1: "",
@@ -17,12 +21,6 @@ export default {
         answer2:"",
         name3: "",
         answer3:""
-      },
-      content: {
-        text: "Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word. Some funny text about that cat bellow. Or... how do you wright this word.",
-        image:"https://images.wallpaperscraft.com/image/goose_bird_beak_113286_3840x2400.jpg",
-        lazy:"https://raw.githubusercontent.com/ashev-pm/pre-velikolepie/master/images.jpg",
-        animation:""
       },
       likes: 0,
       dislikes: 0,

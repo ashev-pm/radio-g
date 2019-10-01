@@ -60,11 +60,11 @@
                           </v-avatar>
                         </v-list-item-avatar>
                         <v-list-item-content>
-                          <v-list-item-title class="comment-name" >WhySoGoose</v-list-item-title>
+                          <v-list-item-title class="comment-name" >{{post.content.name0}}</v-list-item-title>
                         </v-list-item-content>
                       </v-list-item>
                     </v-card-avatar>
-                    <v-card-text>I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.</v-card-text>
+                    <v-card-text>{{post.content.answer}}</v-card-text>
                   </div>
                 </v-expand-transition>
               </v-card>
