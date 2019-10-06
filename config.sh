@@ -16,7 +16,7 @@ sudo apt install nodejs
 
 #vuejs
 sudo npm install -g @vue/cli
-sudo npm install -g  @vue/cli-service
+sudo npm install -g @vue/cli-service
 
 #liquidsoap
 sudo apt install liquidsoap -y
