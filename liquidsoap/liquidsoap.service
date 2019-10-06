@@ -1,0 +1,13 @@
+[Unit]
+Description=liquidsoapservice
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=liquidsoap
+ExecStart=/usr/share/liquidsoap/liquidsoaprun
+
+[Install]
+WantedBy=multi-user.target
