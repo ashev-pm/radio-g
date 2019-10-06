@@ -1,0 +1,6 @@
+sudo docker stop $(sudo docker container ls -aq)
+sudo docker rm $(sudo docker container ls -aq)
+sudo docker images -f reference="repository*:tag*" -q
+sudo docker rmi $(sudo docker images -f reference="repository*:tag*" -q)
+
+sudo docker run --rm -it --init -p 8080:8080 node-radio-g-client bash
