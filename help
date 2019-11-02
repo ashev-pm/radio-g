@@ -1,0 +1,15 @@
+docker stop $(docker container ls -aq)
+docker rm $(docker container ls -aq)
+docker images -f reference="repository*:tag*" -q
+docker rmi $(docker images -f reference="repository*:tag*" -q)
+
+# Local build example
+sudo docker build --build-arg VUE_APP_STREAM_PROXY_URL=http://35.224.48.39:3000 --build-arg VUE_APP_STREAM_URL=http://35.224.48.39:8000/black.mp3 -t node-radio-g-client .
+docker run --rm -it --init -p 8080:8080 node-radio-g-client bash
+
+# Remote build example
+sudo docker build -t node-radio-g-client https://github.com/ashev-pm/radio-g.git
+
+docker stop $(docker container ls -aq) &&
+docker rm $(docker container ls -aq) &&
+docker rmi $(docker images --filter "since=node:alpine" -q)

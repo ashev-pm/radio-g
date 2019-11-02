@@ -14,11 +14,12 @@ setInterval(() => {
     });
 }, 1000);
 
-http.listen(3000, () => {
+http.listen(3000, '0.0.0.0', () => {
     console.log('listening on *:3000');
 });
 
 io.on('connection', function (socket) {
+    console.log("connected");
     socket.emit(trackNameEvent, state);
 });
 
@@ -60,9 +61,12 @@ function getJsonResult(res) {
     res.on('end', () => {
         try {
             const stats = JSON.parse(rawData);
-            const data = stats.icestats.source.filter(x => x.server_name === 'black.mp3')[0];
-            if (state.title === data.title
-                && state.artist === data.artist)
+
+            const data = Array.isArray(stats.icestats.source) ?
+                stats.icestats.source.filter(x => x.server_name === 'black.mp3')[0]:
+                stats.icestats.source;
+            if (state.title === data.title &&
+                state.artist === data.artist)
                 return;
             state.title = data.title;
             state.artist = data.artist;

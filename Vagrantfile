@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
     config.vm.box = "generic/debian9"
-   # config.vm.provision "shell", path: "install.vue.sh", privileged: false
+    config.vm.provision "shell", path: "config.sh", privileged: true
    
     config.vm.define "dev-machine" do |dm|
         dm.vm.provider "virtualbox" do |vb|
@@ -11,6 +11,5 @@ Vagrant.configure("2") do |config|
         dm.vm.hostname = "dev-machine"
         dm.vm.network "private_network", ip: "172.20.20.31"
     end
-    config.vm.synced_folder "./", "/home/vagrant/radiovelikolepie"
-
+    config.vm.synced_folder "./", "/home/vagrant/radio-g"
 end
