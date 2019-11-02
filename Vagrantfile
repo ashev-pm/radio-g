@@ -12,5 +12,4 @@ Vagrant.configure("2") do |config|
         dm.vm.network "private_network", ip: "172.20.20.31"
     end
     config.vm.synced_folder "./", "/home/vagrant/radio-g"
-
 end

@@ -1,4 +1,6 @@
-FROM node:carbon
+FROM node:alpine
+
+LABEL maintainer="ao003587@gmail.com"
 
 WORKDIR /app
 

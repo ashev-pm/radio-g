@@ -1,4 +1,4 @@
 {
-  "url" : "http://35.224.48.39:8000/",
+  "url" : "http://icecast:8000/",
   "status_file" : "status-json.xsl"
 }

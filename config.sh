@@ -8,6 +8,8 @@ sudo add-apt-repository \
    stable"
 sudo apt update -y
 sudo apt install docker-ce docker-ce-cli containerd.io -y
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 #nodejs
 sudo apt-get install curl software-properties-common
