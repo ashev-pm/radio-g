@@ -14,7 +14,7 @@ services:
     links:
       - proxy
     ports:
-      - "8080:8080"
+      - "80:8080"
     networks:
       - internal
     depends_on:
@@ -27,7 +27,9 @@ services:
     expose: 
         - "3000"
     networks:
-      - internal 
+      - internal      
+    depends_on:
+      - icecast
 
   icecast:
     build: ./icecast
@@ -43,4 +45,6 @@ services:
     volumes:
       - /home/vagrant/radio-g/music:/opt/liquidsoap/playlists/mp3
     networks:
-      - internal 
+      - internal     
+    depends_on:
+      - icecast
