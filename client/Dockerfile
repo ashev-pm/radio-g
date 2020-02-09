@@ -5,11 +5,15 @@ LABEL maintainer="ao003587@gmail.com"
 WORKDIR /app
 
 RUN npm install -g http-server
-
+    
 COPY package*.json ./
 COPY public ./public
 
-RUN npm install
+RUN apk add --no-cache --virtual .gyp \
+        python \
+        make \
+        g++ \
+    && npm install
 
 COPY src /app/src
 

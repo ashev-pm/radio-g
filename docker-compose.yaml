@@ -27,7 +27,9 @@ services:
     expose: 
         - "3000"
     networks:
-      - internal 
+      - internal
+    depends_on:
+      - icecast
 
   icecast:
     build: ./icecast
@@ -37,10 +39,13 @@ services:
         - "8000"
     networks:
       - internal
+    depends_on:
+      - liquidsoap
 
   liquidsoap:
     build: ./liquidsoap
     volumes:
       - /home/vagrant/radio-g/music:/opt/liquidsoap/playlists/mp3
+      #- /home/radio-mp3.log:/var/log/liquidsoap/radio-mp3.log
     networks:
-      - internal 
+      - internal
