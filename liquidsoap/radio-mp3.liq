@@ -1,6 +1,6 @@
 #!/usr/bin/liquidsoap
 # Log dir
-set("log.file.path","/var/log/liquidsoap/radio-mp3.log")
+set("log.file.path","/var/log/liquidsoap/black.log")
 
 music = mksafe(playlist("/opt/liquidsoap/playlists/mp3"))
 

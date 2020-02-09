@@ -162,6 +162,24 @@
         <on-disconnect>/home/icecast/bin/stream-stop</on-disconnect>
     </mount>
 
+
+    <mount type="normal">
+        <mount-name>/remote-radio.mp3</mount-name>
+
+        <username>source</username>
+        <password>hackme</password>
+
+        <max-listeners>25</max-listeners>
+        <hidden>0</hidden>
+        <public>1</public>
+        <http-headers>
+                <header name="Access-Control-Allow-Origin" value="http://webplayer.example.org" />
+                <header name="baz" value="quux" />
+        </http-headers>
+        <on-connect>/home/icecast/bin/stream-start</on-connect>
+        <on-disconnect>/home/icecast/bin/stream-stop</on-disconnect>
+    </mount>
+
     <!--
     <mount type="normal">
         <mount-name>/auth_example.ogg</mount-name>

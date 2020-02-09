@@ -5,6 +5,7 @@ networks:
     driver: bridge
 
 services:
+  
   client:
     build:
       context: ./client
@@ -18,7 +19,7 @@ services:
     networks:
       - internal
     depends_on:
-      - proxy
+     - proxy
 
   proxy:
     build: ./proxy
@@ -46,6 +47,6 @@ services:
     build: ./liquidsoap
     volumes:
       - /home/vagrant/radio-g/music:/opt/liquidsoap/playlists/mp3
-      #- /home/radio-mp3.log:/var/log/liquidsoap/radio-mp3.log
+      - ./infra/logs/liquidsoap:/var/log/liquidsoap/
     networks:
       - internal
